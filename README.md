@@ -422,23 +422,108 @@ Author: l-isaro <l.isaro@alustudent.com>
    - Create a new file named `unwanted.txt` add some changes and commit it with a message like "Unwanted commit".
 
    **Challenge:** Use `git rebase -i` to identify and remove the "Unwanted commit" commit, cleaning up your history. learn more about `dropping commits` [here](https://articles.assembla.com/en/articles/2941346-how-to-delete-commits-from-a-branch-in-git)
+   ```
+   ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git add unwanted.txt
 
-7. **Reordering Commits:**
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git commit -m "Unwanted commit"                     
+[main 33c3513] Unwanted commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)      
+ create mode 100644 unwanted.txt
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git rebase -i Head~3
+Successfully rebased and updated refs/heads/main.     
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git log
+commit e1de2554075b1ac298527fa23d2c343be7e0166a (HEAD 
+-> main)
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Mon May 20 16:33:06 2024 +0200
+
+    Create third and fourth files
+
+    Create Third File
+
+    Create fourth file
+
+commit 50fd728712c30d94cb7d27e072b1acf951db070a       
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Mon May 20 16:29:12 2024 +0200
+
+    added a README
+
+commit 6e13d5a65e7bdc69c7584298691ba49edfc7a2c8       
+:
+```
+
+8. **Reordering Commits:**
 
    - Delve deeper into `git rebase -i`. Can you rearrange commits within your history using this command? learn more about `ordering commits` [here](https://www.youtube.com/watch?v=V9KpcGO7nLo)
+```
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git log
+commit e1de2554075b1ac298527fa23d2c343be7e0166a (HEAD 
+-> main)
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Mon May 20 16:33:06 2024 +0200
+pick e1de255 Create third and fourth files
 
-8. **Cherry-Picking Commits:**
+    Create third and fourth files
+
+    Create Third File
+
+    Create fourth file
+
+commit 50fd728712c30d94cb7d27e072b1acf951db070a       
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Mon May 20 16:29:12 2024 +0200
+
+    added a README
+
+commit 6e13d5a65e7bdc69c7584298691ba49edfc7a2c8       
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git rebase -i Head~2
+Successfully rebased and updated refs/heads/main.     
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git log
+commit 264ea5b0c3d8300865262d08d33fbfe36d3c68eb (HEAD 
+-> main)
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Mon May 20 16:29:12 2024 +0200
+
+    added a README
+
+commit 749c78a6e6782e68e815ba4449bb4755dcb6539c       
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Mon May 20 16:33:06 2024 +0200
+
+    Create third and fourth files
+
+    Create Third File
+
+    Create fourth file
+
+commit 6e13d5a65e7bdc69c7584298691ba49edfc7a2c8       
+:
+```
+
+9. **Cherry-Picking Commits:**
 
    - Create a branch, call it `ft/branch`, and add a new file named `test5.md` with some content. Commit these changes with a message like "Implemented test 5".
    - Imagine you only desire a specific commit from `ft/branch`. Research and use `git cherry-pick` to selectively bring that commit into your current branch which is `main`.
 
    learn more about `cherry-pick` [here](https://www.freecodecamp.org/news/git-cherry-pick-avoid-duplicate-commits/)
 
-9. **Visualizing Commit History (Bonus):**
+10. **Visualizing Commit History (Bonus):**
 
    - Tools like `git log --graph` or a graphical Git client can help visualize your commit history. Explore these tools for a clearer understanding of your workflow.
 
-10. **Understanding Reflogs (Bonus):**
+11. **Understanding Reflogs (Bonus):**
 
 - Reflogs track Git operation history. Research about `git reflog` to learn how you can navigate back to previous states in your repository if needed.
 
