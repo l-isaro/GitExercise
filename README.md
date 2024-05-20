@@ -336,7 +336,85 @@ $ git commit -m "Create fourth file"
    - Let's explore more complex squashing. Can you combine the last two commits ("Create third file" and "Create fourth file") into a single commit named "Create third and fourth files"?
 
    **Challenge:** Utilize interactive rebasing with the `squash` command to achieve this advanced squash. **Check step 4**
+```
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git rebase Head~2
+error: cannot rebase: You have unstaged changes.
+error: Please commit or stash them.
 
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 3 and 2 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 3 and 2 different commits each, respectively.
+pick 23c3ca4 Create fourth file
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+nothing to commit, working tree clean
+
+pick 50fd728 added a README
+Create third and fourth files
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git rebase Head~2
+Current branch main is up to date.
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git rebase Head~2
+Current branch main is up to date.
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git rebase Head~1
+Current branch main is up to date.
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git rebase -i Head~1
+Successfully rebased and updated refs/heads/main.
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git rebase -i Head~3
+[detached HEAD e1de255] Create third and fourth files
+ Date: Mon May 20 16:33:06 2024 +0200
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test3.md
+ create mode 100644 test4.md
+Successfully rebased and updated refs/heads/main.
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git log
+commit e1de2554075b1ac298527fa23d2c343be7e0166a (HEAD -> main)
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Mon May 20 16:33:06 2024 +0200
+
+    Create third and fourth files
+
+    Create Third File
+
+    Create fourth file
+
+commit 50fd728712c30d94cb7d27e072b1acf951db070a
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Mon May 20 16:29:12 2024 +0200
+
+    added a README
+
+commit 6e13d5a65e7bdc69c7584298691ba49edfc7a2c8
+Author: l-isaro <l.isaro@alustudent.com>
+:
+```
 6. **Dropping a Commit:**
 
    - We all make mistakes. Imagine needing to completely remove an unwanted commit from your history.
