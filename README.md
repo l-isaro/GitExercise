@@ -752,6 +752,45 @@ $
 
    **Challenge:** Use `git checkout -b ft/new-branch-from-commit commit-hash` (adjust the commit hash as needed) to create a new branch named `ft/new-branch-from-commit` starting from the commit two positions back in your history. learn more [here](https://www.novicedev.com/blog/create-git-branch-commit)
 
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git log
+commit cb10abc52af6d773eacd8ad43e900e7b617c0f76 (HEAD -> main)
+Merge: a251949 f35503c
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Tue May 21 12:10:21 2024 +0200
+
+    Merge branch 'ft/new-feature'
+
+commit a2519499c58400f8cf076a1bb6e2a17658572fcd (origin/main, origin/HEAD)
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Tue May 21 11:57:18 2024 +0200
+
+    Updated project readme
+
+commit f35503c1b51e2a4bacd04d4a4c57e4ba0da2d937
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Tue May 21 11:49:27 2024 +0200
+cb10abc (HEAD -> main) Merge branch 'ft/new-feature'                                        ture
+a251949 (origin/main, origin/HEAD) Updated project readme                                   ymGitAdvanced (main)
+f35503c Implemented core functionality for new feature                                      ature'
+51ceaa4 Merge branch 'main' of https://github.ject readmecom/l-isaro/TheGymGitAdvanced                  feature
+1145b5a Implemented test 5                    com/l-isaro/TheGymGitAdvanced
+264ea5b added a README
+749c78a Create third and fourth files
+2abf6fc Created 4th file
+dac17da chore: Create third and fourth files  
+6e13d5a chore: create initial file
+762e148 Initial commit
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)                          ymGitAdvanced (main)
+$ git checkout -b ft/new-branch-from-commit a2519499c58400f8cf076a1bb6e2a17658572fcd        
+Switched to a new branch 'ft/new-branch-from-commit'
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/new-branch-from-commit)     
+$
+```
+
 7. **Branch Merging:**
 
    - Now that you've completed work on your feature branch, it's time to integrate it into `main`.
