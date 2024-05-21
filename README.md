@@ -652,8 +652,8 @@ git log --graph
    - Imagine working on a new feature named `ft/new-feature`. Let's establish a dedicated branch for it.
 
    **Challenge:** Create a new branch named `ft/new-feature` and switch to that branch.
-   ```bash
-   ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)   
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)   
 $ git checkout -b ft/new-feature
 Switched to a new branch 'ft/new-feature'
 
