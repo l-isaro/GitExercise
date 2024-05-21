@@ -709,6 +709,20 @@ $ git commit -m "Updated project readme"
 
    - So far, we've been working with local branches that exist on your machine. Research the concept of remote branches, which are copies of your local branches stored on a Git hosting platform like GitHub. [Learn](https://www.baeldung.com/ops/git-synchronize-local-remote-branches) how to push your local branches to remote repositories and pull changes from them to keep your local and remote repositories in sync.
 
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads       
+Compressing objects: 100% (2/2), done.        
+Writing objects: 100% (3/3), 283 bytes | 141.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/l-isaro/TheGymGitAdvanced.git
+   51ceaa4..a251949  main -> main
+```
+
 5. **Branch Deletion:**
 
    - After merging or completing work on a feature branch, it's good practice to remove it.
