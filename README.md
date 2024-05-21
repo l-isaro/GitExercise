@@ -874,11 +874,47 @@ $
 
    **Challenge:** Stash your current changes in the `main` branch using `git stash`.
 
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/improved-branch-name)
+$ git status
+On branch ft/improved-branch-name
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)  
+        modified:   test1.md
+
+no changes added to commit (use "git add" and/or "git commit -a")        
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/improved-branch-name)
+$ git stash
+Saved working directory and index state WIP on ft/improved-branch-name: cb10abc Merge branch 'ft/new-feature'
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/improved-branch-name)
+$ git status
+On branch ft/improved-branch-name
+nothing to commit, working tree clean
+```
+
 2. **Retrieving Stashed Changes:**
 
    - Later, when you're ready to resume working on those stashed changes, you can retrieve them.
 
    **Challenge:** Apply the most recent stash back onto the `main` branch using `git stash pop`.
+
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/improved-branch-name)
+$ git stash pop
+On branch ft/improved-branch-name
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)  
+        modified:   test1.md
+
+no changes added to commit (use "git add" and/or "git commit -a")        
+Dropped refs/stash@{0} (ff64a085dfd6e193311aa1c7bdde25a030991f04)
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/improved-branch-name)
+```
 
 3. **Branch Merging Conflicts (Continued):**
 
