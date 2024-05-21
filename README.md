@@ -824,6 +824,14 @@ Successfully rebased and updated refs/heads/ft/new-branch-from-commit.
 
    **Challenge:** Use `git branch -m ft/new-branch-from-commit ft/improved-branch-name` to rename your branch.
 
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/new-branch-from-commit)
+$ git branch -m ft/new-branch-from-commit ft/improved-branch-name
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/improved-branch-name)
+$
+```
+
 10. **Checking Out Detached HEAD:**
 
 - In specific situations, you might need to detach HEAD from your current branch. Research `git checkout <commit-hash>` (replace with the desired commit hash) to understand this concept.
