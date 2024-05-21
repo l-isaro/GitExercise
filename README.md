@@ -836,6 +836,36 @@ $
 
 - In specific situations, you might need to detach HEAD from your current branch. Research `git checkout <commit-hash>` (replace with the desired commit hash) to understand this concept.
 
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/improved-branch-name)
+$ git checkout a2519499c58400f8cf076a1bb6e2a17658572fcd
+Note: switching to 'a2519499c58400f8cf076a1bb6e2a17658572fcd'.
+
+You are in 'detached HEAD' state. You can look around, make experimental 
+changes and commit them, and you can discard any commits you make in thisstate without impacting any branches by switching back to a branch.      
+
+If you want to create a new branch to retain commits you create, you may 
+do so (now or later) by using -c with the switch command. Example:       
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at a251949 Updated project readme
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced ((a251949...))
+$ git switch -
+Previous HEAD position was a251949 Updated project readme
+Switched to branch 'ft/improved-branch-name'
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/improved-branch-name)
+$
+```
+
 **Part 3: Advanced Workflows (10+ Challenges)**
 
 1. **Stashing Changes:**
