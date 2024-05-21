@@ -674,6 +674,29 @@ $
 
    - Tools like `git log --graph` or a graphical Git client can help visualize your commit history. Explore these tools for a clearer understanding of your workflow.
 
+```bash
+git log --graph
+*   commit 51ceaa42a48b59f2b5635b63e24b981a27834eff (HEAD -> main, origin/main, origin/HEAD)
+|\  Merge: 1145b5a 2abf6fc
+| | Author: l-isaro <l.isaro@alustudent.com>
+| | Date:   Tue May 21 10:49:08 2024 +0200
+| | 
+| |     Merge branch 'main' of https://github.com/l-isaro/TheGymGitAdvanced
+| | 
+| * commit 2abf6fc437a90928bb272f3142e3cad7e993136b
+| | Author: l-isaro <l.isaro@alustudent.com>       
+| | Date:   Mon May 20 13:39:18 2024 +0200
+| | 
+| |     Created 4th file
+| | 
+| * commit dac17da95384b5610096e65ce44711874b4f3724
+| | Author: l-isaro <l.isaro@alustudent.com>       
+| | Date:   Mon May 20 13:38:31 2024 +0200
+| | 
+| |     chore: Create third and fourth files       
+:
+```
+
 11. **Understanding Reflogs (Bonus):**
 
 - Reflogs track Git operation history. Research about `git reflog` to learn how you can navigate back to previous states in your repository if needed.
