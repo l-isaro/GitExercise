@@ -39,7 +39,7 @@ Before starting this exercise, Go through **Branching Model** and **Contribution
    - From the status you will see that you forgot to add `test4.md` in the last commit.
 
    **Challenge:** Recover from this error by staging/adding `test4.md` and amending the commit message with an appropriate description.
-```
+```bash
 ISARO@DESKTOP-JAF8I5H MINGW64 
 $ git status
 On branch main
