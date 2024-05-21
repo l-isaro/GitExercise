@@ -661,52 +661,85 @@ ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/new-feature)
 $ 
 ```
 
-3. **Working on the Feature Branch:**
+2. **Working on the Feature Branch:**
 
    - Create a new file named `feature.txt` in this branch and add some content to it.
    - Commit these changes with a descriptive message like "Implemented core functionality for new feature".
 
-4. **Switching Back and Making More Changes:**
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/new-feature)
+$ touch feature.txt
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/new-feature)
+$ git add feature.txt 
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/new-feature)
+$ git commit -m "Implemented core functionality for new feature"
+[ft/new-feature f35503c] Implemented core functionality for new feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+```
+
+3. **Switching Back and Making More Changes:**
 
    - It's common to switch between branches during development.
 
    **Challenge:** Switch back to the `main` branch (previously master) and create a new file named `readme.txt` with some introductory content. Commit these changes with a message like "Updated project readme".
 
-5. **Local vs. Remote Branches:**
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/new-feature)
+$ git checkout main                           ymGitAdvanced (ft/new-f
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'. 
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ touch readme.txt                            ymGitAdvanced (main)   
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)                          ymGitAdvanced (main)   
+$ git add readme.txt
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git commit -m "Updated project readme"
+[main a251949] Updated project readme
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.txt
+```
+
+4. **Local vs. Remote Branches:**
 
    - So far, we've been working with local branches that exist on your machine. Research the concept of remote branches, which are copies of your local branches stored on a Git hosting platform like GitHub. [Learn](https://www.baeldung.com/ops/git-synchronize-local-remote-branches) how to push your local branches to remote repositories and pull changes from them to keep your local and remote repositories in sync.
 
-6. **Branch Deletion:**
+5. **Branch Deletion:**
 
    - After merging or completing work on a feature branch, it's good practice to remove it.
 
    **Challenge:** Delete the `ft/new-feature` branch once you're confident the changes are integrated into `main`.
 
-7. **Creating a Branch from a Commit:**
+6. **Creating a Branch from a Commit:**
 
    - You can also create a branch from a specific commit in your history.
 
    **Challenge:** Use `git checkout -b ft/new-branch-from-commit commit-hash` (adjust the commit hash as needed) to create a new branch named `ft/new-branch-from-commit` starting from the commit two positions back in your history. learn more [here](https://www.novicedev.com/blog/create-git-branch-commit)
 
-8. **Branch Merging:**
+7. **Branch Merging:**
 
    - Now that you've completed work on your feature branch, it's time to integrate it into `main`.
 
    **Challenge:** Merge the `ft/new-branch-from-commit` branch into the `main` branch. Address any merge conflicts that might arise.
 
-9. **Branch Rebasing:**
+8. **Branch Rebasing:**
 
    - Rebasing is another method to integrate changes from a feature branch. It rewrites your branch history by incorporating its commits on top of the latest commit in the target branch (`main` in our case).
 
    **Challenge:** Try rebasing the `ft/new-branch-from-commit` branch onto the `main` branch. Remember, rebasing rewrites history, so use it with caution, especially in shared repositories. learn more about rebasing [here](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase#:~:text=From%20a%20content%20perspective%2C%20rebasing,them%20to%20the%20specified%20base.)
 
-10. **Renaming Branches:**
+9. **Renaming Branches:**
 
    - Branch names can sometimes evolve. Let's rename `ft/new-branch-from-commit` to a more descriptive name.
 
    **Challenge:** Use `git branch -m ft/new-branch-from-commit ft/improved-branch-name` to rename your branch.
 
-11. **Checking Out Detached HEAD:**
+10. **Checking Out Detached HEAD:**
 
 - In specific situations, you might need to detach HEAD from your current branch. Research `git checkout <commit-hash>` (replace with the desired commit hash) to understand this concept.
 
