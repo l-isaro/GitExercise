@@ -519,6 +519,55 @@ commit 6e13d5a65e7bdc69c7584298691ba49edfc7a2c8
 
    - Delve deeper into `git rebase -i`. Can you rearrange commits within your history using this command? learn more about `ordering commits` [here](https://www.youtube.com/watch?v=V9KpcGO7nLo)
 
+```bash
+$ git log
+commit e1de2554075b1ac298527fa23d2c34
+-> main)
+Author: l-isaro <l.isaro@alustudent.c
+Date:   Mon May 20 16:33:06 2024 +020
+pick e1de255 Create third and fourth 
+
+    Create third and fourth files
+
+    Create Third File
+
+    Create fourth file
+
+commit 50fd728712c30d94cb7d27e072b1ac
+Author: l-isaro <l.isaro@alustudent.c
+Date:   Mon May 20 16:29:12 2024 +020
+
+    added a README
+
+commit 6e13d5a65e7bdc69c7584298691ba4
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documanced (main)
+$ git rebase -i Head~2
+Successfully rebased and updated refs
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documanced (main)
+$ git log
+commit 264ea5b0c3d8300865262d08d33fbf
+-> main)
+Author: l-isaro <l.isaro@alustudent.c
+Date:   Mon May 20 16:29:12 2024 +020
+
+    added a README
+
+commit 749c78a6e6782e68e815ba4449bb47
+Author: l-isaro <l.isaro@alustudent.c
+Date:   Mon May 20 16:33:06 2024 +020
+
+    Create third and fourth files
+
+    Create Third File
+
+    Create fourth file
+
+commit 6e13d5a65e7bdc69c7584298691ba4
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documanced (main)
+```
 
 9. **Cherry-Picking Commits:**
 
@@ -526,6 +575,100 @@ commit 6e13d5a65e7bdc69c7584298691ba49edfc7a2c8
    - Imagine you only desire a specific commit from `ft/branch`. Research and use `git cherry-pick` to selectively bring that commit into your current branch which is `main`.
 
    learn more about `cherry-pick` [here](https://www.freecodecamp.org/news/git-cherry-pick-avoid-duplicate-commits/)
+
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/DocumSwitched to a new branch 'ft/branch'
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/DocumSwitched to a new branch 'ft/branch'   
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Docum
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/branch)
+$ touch test5.md
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/branch)
+$ git add test5.md
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/branch)
+$ git commit -m "Implemented test 5"
+[ft/branch 4ed9be8] Implemented test 5
+ 1 file changed, 1 insertion(+)       
+ create mode 100644 test5.md
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/branch)
+$ git branch
+* ft/branch
+  main
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/branch)
+$ git checkout main
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 2 and 2 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)    
+$ git log
+commit 264ea5b0c3d8300865262d08d33fbfe36d3c68eb (HEAD -> main)
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Mon May 20 16:29:12 2024 +0200
+
+    added a README
+
+commit 749c78a6e6782e68e815ba4449bb4755dcb6539c
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Mon May 20 16:33:06 2024 +0200
+
+    Create third and fourth files
+
+    Create Third File
+
+    Create fourth file
+
+commit 6e13d5a65e7bdc69c7584298691ba49edfc7a2c8
+Author: l-isaro <l.isaro@alustudent.com>
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)    
+$ git checkout ft/branch
+Switched to branch 'ft/branch'
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/branch)
+$ git log
+commit 4ed9be8484b8b4ef45d3588b33f09b15a7c2af86 (HEAD -> ft/branch)
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Tue May 21 08:42:55 2024 +0200
+
+    Implemented test 5
+
+commit 264ea5b0c3d8300865262d08d33fbfe36d3c68eb (main)
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Mon May 20 16:29:12 2024 +0200
+
+    added a README
+
+commit 749c78a6e6782e68e815ba4449bb4755dcb6539c
+Author: l-isaro <l.isaro@alustudent.com>
+Date:   Mon May 20 16:33:06 2024 +0200
+
+    Create third and fourth files
+
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/branch)
+$ git checkout main
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 2 and 2 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)    
+$ git cherry-pick 4ed9be8484b8b4ef45d3588b33f09b15a7c2af86 
+[main 1145b5a] Implemented test 5
+ Date: Tue May 21 08:42:55 2024 +0200
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test5.md
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)    
+$
+```
 
 10. **Visualizing Commit History (Bonus):**
 
