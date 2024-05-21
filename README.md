@@ -422,8 +422,8 @@ Author: l-isaro <l.isaro@alustudent.com>
    - Create a new file named `unwanted.txt` add some changes and commit it with a message like "Unwanted commit".
 
    **Challenge:** Use `git rebase -i` to identify and remove the "Unwanted commit" commit, cleaning up your history. learn more about `dropping commits` [here](https://articles.assembla.com/en/articles/2941346-how-to-delete-commits-from-a-branch-in-git)
-   ```
-   ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+```
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
 $ git add unwanted.txt
 
 ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
@@ -459,9 +459,12 @@ commit 6e13d5a65e7bdc69c7584298691ba49edfc7a2c8
 :
 ```
 
-8. **Reordering Commits:**
+7. **Working with Tags:**
 
-   - Delve deeper into `git rebase -i`. Can you rearrange commits within your history using this command? learn more about `ordering commits` [here](https://www.youtube.com/watch?v=V9KpcGO7nLo)
+   - Tags act like bookmarks in your Git history. Create a tag to mark a specific point in your development.
+
+   **Challenge:** Use `git tag v1.0` to create a tag named `v1.0` on the current commit in your `main` branch.  [git tags](https://www.javatpoint.com/git-tags)
+
 ```
 ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
 $ git log
@@ -511,6 +514,11 @@ Date:   Mon May 20 16:33:06 2024 +0200
 commit 6e13d5a65e7bdc69c7584298691ba49edfc7a2c8       
 :
 ```
+
+8. **Reordering Commits:**
+
+   - Delve deeper into `git rebase -i`. Can you rearrange commits within your history using this command? learn more about `ordering commits` [here](https://www.youtube.com/watch?v=V9KpcGO7nLo)
+
 
 9. **Cherry-Picking Commits:**
 
