@@ -729,6 +729,23 @@ To https://github.com/l-isaro/TheGymGitAdvanced.git
 
    **Challenge:** Delete the `ft/new-feature` branch once you're confident the changes are integrated into `main`.
 
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git merge ft/new-feature
+hint: Waiting for your editor to close the fil
+Merge made by the 'ort' strategy.
+ feature.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git branch -d ft/new-feature
+Deleted branch ft/new-feature (was f35503c).
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$
+```
+
 6. **Creating a Branch from a Commit:**
 
    - You can also create a branch from a specific commit in your history.
