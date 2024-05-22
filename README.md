@@ -1136,15 +1136,75 @@ $
 
    **Challenge:** Add a pattern like `/tmp` to your `.gitignore` file to exclude all temporary files and directories from version control. more about `ignoring files` [here](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files)
 
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/improved-branch-name)
+$ touch .gitignore
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/improved-branch-name)
+$ git add .gitignore 
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/improved-branch-name)
+$ git commit -m "added a gitignore file"
+[ft/improved-branch-name 06c09cf] added a gitignore file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/improved-branch-name)
+$
+```
+
 7. **Working with Tags:**
 
    - Tags act like bookmarks in your Git history. Create a tag to mark a specific point in your development.
 
    **Challenge:** Use `git tag v1.0` to create a tag named `v1.0` on the current commit in your `main` branch. [git tags](https://www.javatpoint.com/git-tags)
 
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/improved-branch-name)
+$ git chekout main
+Merge branch 'ft/improved-branch-name'
+git: 'chekout' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (ft/improved-branch-name)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 9 commits.
+  (use "git push" to publish your local commits)  
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git merge ft/improved-branch-name
+hint: Waiting for your editor to close the file...
+Merge made by the 'ort' strategy.
+ .gitignore | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git tag v1.0
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$
+```
+
 8. **Listing and Deleting Tags:**
 
    **Challenge:** Use `git tag` to list all existing tags. Then, use `git tag -d <tag-name>` to delete a specific tag (replace `<tag-name>` with the actual tag you want to remove).
+
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)       
+$ git tag
+v1.0
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)
+$ git tag -d v1.0
+Deleted tag 'v1.0' (was 91f2a57)
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)       
+$
+```
 
 9. **Pushing Local Work to Remote Repositories:**
 
@@ -1152,8 +1212,45 @@ $
 
    **Challenge:** Assuming you've set up a remote repository on a Git hosting platform (like GitHub), push the changes with the actual branch you want to push to push your local branch to the remote repository.
 
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)       
+$ git push origin main
+Enumerating objects: 32, done.
+Counting objects: 100% (31/31), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (22/22), done.
+Writing objects: 100% (28/28), 2.39 KiB | 84.00 KiB/s, done.
+Total 28 (delta 12), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (12/12), completed with 1 local object.   
+To https://github.com/l-isaro/TheGymGitAdvanced.git
+   a251949..91f2a57  main -> main
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)       
+$
+```
+
 10. **Pulling Changes from Remote Repositories:**
 
 - Collaboration often involves pulling changes from the remote repository made by others.
 
 **Challenge:** Navigate to Github and make some changes inside your `README` file that you created on your `main` branch and in your local environment use `git pull origin <branch-name>` (replace `<branch-name>` with the actual branch you want to pull) to fetch changes from the remote repository's `main` branch and merge them into your local `main` branch. Address any merge conflicts that might arise.
+
+```bash
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)       
+$ git pull origin main
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 941 bytes | 52.00 KiB/s, done.
+From https://github.com/l-isaro/TheGymGitAdvanced
+ * branch            main       -> FETCH_HEAD
+   91f2a57..b3fb35a  main       -> origin/main
+Updating 91f2a57..b3fb35a
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+
+ISARO@DESKTOP-JAF8I5H MINGW64 ~/Documents/TheGymGitAdvanced (main)       
+$
+```
